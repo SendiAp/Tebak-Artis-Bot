@@ -23,32 +23,23 @@ const getAddToGroupButton = botUsername => ({
 		inline_keyboard: [
 			[
 				{
-					text: "Добавить бота в группу 👥",
+					text: "➕ tambahkan saya kegrub ➕",
 					url: `https://t.me/${botUsername}?startgroup=add`,
 				},
 			],
 		],
 	},
 })
-const getGreetMessage = ({botUsername, isGroup}) => [
+const getGreetMessage = ({botUsername}) => [
 	trueTrim(`
-	👋 Привет. Я — бот для игры в «угадай возраст» в групповых чатах.
+	__Halo everyone,saya adalah bot tebak umur artis__  •tambahkan saya kegrub dan semua perintah akan berfungsi•
 
-	📋 Правила просты: я кидаю вам фото человека, а ваша задача быстро угадать его возраст. Просто отправьте предполагаемый возраст цифрами в чат и я учту ваш голос. Чем точнее вы отвечаете, тем меньше баллов теряете.
-	${isGroup ? "" : "\n😉 Для начала, добавь меня в *групповой чат* и вызови /game.\n"}
-	*Команды:*
-	/game - 🕹 Новая игра
-	/stop - 🛑 Остановить игру
-	/top - 🔝 Рейтинг игроков чата
-	/chart - 🌎 Глобальный рейтинг
-	/donate - 💸 Поддержать проект
-
-	Канал автора: @FilteredInternet ❤️ 
+	tekan /help untuk meminta bantuan 
 `),
 	isGroup ? null : getAddToGroupButton(botUsername),
 ]
 const getOnlyGroupsMessage = botUsername => [
-	"❌ Эта команда доступна только для *групповых чатов*. Создайте чат с друзьями и добавьте туда бота.",
+	"⛔ Bot ini hanya tersedia untuk *obrolan grup *. Buat obrolan dengan teman dan tambahkan bot di sana.",
 	getAddToGroupButton(botUsername),
 ]
 const getRandomPerson = () => {
@@ -117,7 +108,7 @@ const stopGame = async (ctx, chatId) => {
 		if (top.length > 0) {
 			await ctx.replyWithMarkdown(
 				trueTrim(`
-					*🏁 А вот и победители:*
+					🏁 **Dan inilah pemenangnya:**
 
 					${top
 						.sort((a, b) => b.score - a.score)
@@ -134,22 +125,22 @@ const stopGame = async (ctx, chatId) => {
 						)
 						.join("\n")}
 
-					❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
-					🔄 /game - Еще разок?
+					✨Selamat Kepada Pemenang, Yang Telah Memenenangkan Game ini.
+					🔄 /mulai - mau main lagi?
 				`)
 			)
 		} else {
 			await ctx.replyWithMarkdown(
 				trueTrim(`
-					*🏁 Ок, завершаю игру.*
+					*⛔ Oke, saya menyelesaikan permainan.*
 
-					❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
-					🔄 /game - Еще разок?
+					💁 Jika kamu butuh bantuan , tekan /help untuk melihatnya..
+					🔄 /game - mau bermain lagi?
 				`)
 			)
 		}
 	} else {
-		await ctx.reply("❌ Игра не была запущена. Вы можете запутить ее командой /start.")
+		await ctx.reply("🙅 Permainan tidak berjalan.")
 	}
 }
 const getRoundMessage = (chatId, round, time) => {
@@ -171,8 +162,8 @@ const getRoundMessage = (chatId, round, time) => {
 	)
 
 	return trueTrim(`
-		*Раунд ${round + 1}/${config.rounds}*
-		Сколько, по-вашему, лет этому человеку?
+		*Halaman Gambar ${round + 1}/${config.rounds}*
+		Berapakah Umur Artis ini? Silahkan Jawab Dibawah.
 		${
 			answers.length > 0
 				? `\n${answers
@@ -311,8 +302,8 @@ bot.start(async ctx => {
 	)
 })
 
-bot.command("game", async ctx => {
-	console.log("game")
+bot.command("mulai", async ctx => {
+	console.log("mulai")
 	let message = ctx.update.message
 	if (message.chat.id < 0) {
 		let chatId = message.chat.id
@@ -351,8 +342,8 @@ bot.command("stop", async ctx => {
 	}
 })
 
-bot.command("donate", ctx => {
-	console.log("donate")
+bot.command("help", ctx => {
+	console.log("help")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
 			Проще всего задонатить здесь: babki.mishasaidov.com
@@ -365,8 +356,8 @@ bot.command("donate", ctx => {
 	)
 })
 
-bot.command("top", async ctx => {
-	console.log("top")
+bot.command("top_grub", async ctx => {
+	console.log("top_grub")
 	let message = ctx.update.message
 	if (message.chat.id < 0) {
 		let chatId = message.chat.id
@@ -420,8 +411,8 @@ bot.command("top", async ctx => {
 	}
 })
 
-bot.command("chart", async ctx => {
-	console.log("chart")
+bot.command("top_global", async ctx => {
+	console.log("top_global")
 	const fromId = String(ctx.update.message.from.id)
 	const data = db.read()
 	let top = []
