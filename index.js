@@ -242,12 +242,12 @@ const startGame = (ctx, chatId) => {
 				if (!top.every(member => member.answer === null)) {
 					await ctx.replyWithMarkdown(
 						trueTrim(`
-						Человеку на этом фото *${rightAnswer} ${pluralize(
+						Artis Difoto ini berumur *${rightAnswer} ${pluralize(
 							rightAnswer,
-							"год",
-							"года",
-							"лет"
-						)}*. Вот, кто был ближе всего:
+							"umur",
+							"point",
+							"point"
+						)}*. Berikut,siapa yang paling dekat:
 
 						${top
 							.sort((a, b) => b.addScore - a.addScore)
@@ -264,7 +264,7 @@ const startGame = (ctx, chatId) => {
 						}
 					)
 				} else {
-					await ctx.reply("🤔 Похоже, вы не играете. Ок, завершаю игру...")
+					await ctx.reply("😏 Sepertinya Anda tidak bermain. Oke, saya menyelesaikan permainannya...")
 					await stopGame(ctx, chatId)
 					return
 				}
@@ -311,7 +311,7 @@ bot.command("mulai", async ctx => {
 		if (chat) {
 			if (chat.isPlaying) {
 				return ctx.reply(
-					"❌ У вас уже запущена игра. Вы можете ее остановить командой /stop."
+					"⛔ Anda sudah memulai permainan.Anda dapat menghentikannya dengan tim klik /stop."
 				)
 			} else {
 				chat.isPlaying = true
@@ -324,7 +324,7 @@ bot.command("mulai", async ctx => {
 		} else {
 			createChat(chatId)
 		}
-		await ctx.replyWithMarkdown("*Игра начинается!*")
+		await ctx.replyWithMarkdown("💁*Permainan Dimulai!*")
 		startGame(ctx, chatId)
 	} else {
 		await ctx.replyWithMarkdown(...getOnlyGroupsMessage(ctx.botInfo.username))
@@ -379,7 +379,7 @@ bot.command("top_grub", async ctx => {
 			if (top.length > 0) {
 				await ctx.replyWithMarkdown(
 					trueTrim(`
-					*🔝 Лучшие игроки этого чата за все время:*
+					*🏅 Pemain terbaik dari obrolan ini adalah:*
 
 					${top
 						.sort((a, b) => b.score - a.score)
@@ -389,22 +389,22 @@ bot.command("top_grub", async ctx => {
 									member.firstName
 								)}: ${numberWithSpaces(member.score)} ${pluralize(
 									member.score,
-									"очко",
-									"очка",
-									"очков"
+									"umur",
+									"point",
+									"point"
 								)}`
 						)
 						.join("\n")}
 
-					❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
-					🔄 /game - Еще разок?
+					◻️ /mulai permainan untuk mendapatkan peringkat paling pertama digrub ini.
+					🔄 apakah kamu tertarik? yu bermain lagi bersama teman mu!
 				`)
 				)
 			} else {
-				await ctx.reply("❌ Вы еще не сыграли ни одной игры в этом чате.")
+				await ctx.reply("⛔ Anda belum memainkan satu game pun dalam obrolan ini.")
 			}
 		} else {
-			await ctx.reply("❌ Вы еще не сыграли ни одной игры в этом чате.")
+			await ctx.reply("⛔ Anda belum memainkan satu game pun dalam obrolan ini.")
 		}
 	} else {
 		await ctx.replyWithMarkdown(...getOnlyGroupsMessage(ctx.botInfo.username))
@@ -453,7 +453,7 @@ bot.command("top_global", async ctx => {
 	if (top.length > 0) {
 		await ctx.replyWithMarkdown(
 			trueTrim(`
-			*🔝 Глобальный рейтинг игроков:*
+			*🌍 Peringkat Pemain Global:*
 
 			${topSlice
 				.map(
@@ -462,9 +462,9 @@ bot.command("top_global", async ctx => {
 							fromId === member.id ? "Вы: " : ""
 						}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(
 							member.score,
-							"очко",
-							"очка",
-							"очков"
+							"umur",
+							"point",
+							"point"
 						)}`
 				)
 				.join("\n")}
@@ -480,12 +480,12 @@ bot.command("top_global", async ctx => {
 					  )}\n`
 					: ""
 			}
-			❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
-			🔄 /game - Еще разок?
+			🤖 Dapatkan peringkat teratas dengan cara bermain game ini.
+			🥰 Tertarik dengan game ini?Beri Donasi agar bot akan terus berjalan.
 		`)
 		)
 	} else {
-		await ctx.reply("❌ На данный момент невозможно составить рейтинг.")
+		await ctx.reply("💁 Saat ini,tidak mungkin membuat peringkat.")
 	}
 })
 
@@ -505,7 +505,7 @@ bot.on("message", async ctx => {
 			let firstName = message.from.first_name
 			let answer = Number(message.text)
 			if (answer <= 0 || answer > 120) {
-				return ctx.reply("Ответ вне допустимого диапазона (1 - 120)", {
+				return ctx.reply("Jawab di luar kisaran yang diizinkan (1 - 120)", {
 					reply_to_message_id: ctx.message.message_id,
 				})
 			}
