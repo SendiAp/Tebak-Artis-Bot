@@ -346,12 +346,16 @@ bot.command("help", ctx => {
 	console.log("help")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			Проще всего задонатить здесь: babki.mishasaidov.com
+			Cara Memainkan Bot Tebak Umur Artis:
 
-			ЮMoney: \`4100117319944149\`
-			QIWI: \`+77002622563\`
-			BTC: \`1MDRDDBURiPEg93epMiryCdGvhEncyAbpy\`
-			Kaspi 🇰🇿: \`4400 4302 1955 7599\`
+			1.)Masukan bot digrub anda (dan jadikan admin)
+			2.)ketik /mulai untuk memulai gamenya 
+			3.)kamu akan dikasih gambar artis,dan kamu akan disuruh menebak umurnya.
+			4.)Waktu (3detik) dengan (5 foto) yang berbeda beda.
+			5.)setiap kamu menjawab nya ,kamu akan mendapatkan point.
+			6.)semakin besar point kamu , kamu akan mendapatkan peringkat di /top_global atau di /top_grub
+			7.)peringkat akan direset setiap hari Senin (tidak ditentukan jam)
+			8.) Setiap peringkat akan dimasukan channel setiap minggunya.
 		`)
 	)
 })
