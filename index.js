@@ -242,12 +242,12 @@ const startGame = (ctx, chatId) => {
 				if (!top.every(member => member.answer === null)) {
 					await ctx.replyWithMarkdown(
 						trueTrim(`
-						Artis Difoto ini berumur *${rightAnswer} ${pluralize(
+						artis ini berumur *${rightAnswer} ${pluralize(
 							rightAnswer,
 							"umur",
-							"point",
+							"tahun",
 							"point"
-						)}*. Berikut,siapa yang paling dekat:
+						)}*. berikut, siapa yang paling dekat:
 
 						${top
 							.sort((a, b) => b.addScore - a.addScore)
