@@ -245,9 +245,9 @@ const startGame = (ctx, chatId) => {
 						artis ini berumur *${rightAnswer} ${pluralize(
 							rightAnswer,
 							"umur",
-							"tahun",
-							"point"
-						)}*. berikut, siapa yang paling dekat:
+							"point",
+							"tahun"
+						)}*. hasil, point kamu:
 
 						${top
 							.sort((a, b) => b.addScore - a.addScore)
