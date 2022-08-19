@@ -394,7 +394,7 @@ bot.command("top_grub", async ctx => {
 								)}: ${numberWithSpaces(member.score)} ${pluralize(
 									member.score,
 									"umur",
-									"tahun",
+									"point",
 									"point"
 								)}`
 						)
@@ -467,7 +467,7 @@ bot.command("top_global", async ctx => {
 						}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(
 							member.score,
 							"umur",
-							"tahun",
+							"point",
 							"point"
 						)}`
 				)
@@ -479,7 +479,7 @@ bot.command("top_global", async ctx => {
 					  )}: ${numberWithSpaces(currentUser.score)} ${pluralize(
 							currentUser.score,
 							"umur",
-							"tahun",
+							"point",
 							"point"
 					  )}\n`
 					: ""
