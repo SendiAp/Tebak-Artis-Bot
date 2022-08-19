@@ -118,9 +118,9 @@ const stopGame = async (ctx, chatId) => {
 									member.firstName
 								)}: ${numberWithSpaces(member.score)} ${pluralize(
 									member.score,
-									"umur",
 									"point",
-									"tahun"
+									"point",
+									"point"
 								)}`
 						)
 						.join("\n")}
@@ -393,7 +393,7 @@ bot.command("top_grub", async ctx => {
 									member.firstName
 								)}: ${numberWithSpaces(member.score)} ${pluralize(
 									member.score,
-									"umur",
+									"point",
 									"point",
 									"point"
 								)}`
@@ -466,7 +466,7 @@ bot.command("top_global", async ctx => {
 							fromId === member.id ? "Вы: " : ""
 						}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(
 							member.score,
-							"umur",
+							"point",
 							"point",
 							"point"
 						)}`
@@ -478,7 +478,7 @@ bot.command("top_global", async ctx => {
 							currentUser.firstName
 					  )}: ${numberWithSpaces(currentUser.score)} ${pluralize(
 							currentUser.score,
-							"umur",
+							"point",
 							"point",
 							"point"
 					  )}\n`
