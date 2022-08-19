@@ -119,8 +119,8 @@ const stopGame = async (ctx, chatId) => {
 								)}: ${numberWithSpaces(member.score)} ${pluralize(
 									member.score,
 									"umur",
-									"tahun",
-									"point"
+									"point",
+									"tahun"
 								)}`
 						)
 						.join("\n")}
