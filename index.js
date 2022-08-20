@@ -30,13 +30,13 @@ const getAddToGroupButton = botUsername => ({
 		],
 	},
 })
-const getGreetMessage = ({botUsername, isGroup}) => [
+const getGreetMessage = ({botUsername}) => [
 	trueTrim(`
 	__Halo everyone,saya adalah bot tebak umur artis__  •tambahkan saya kegrub dan semua perintah akan berfungsi•
 
 	tekan /help untuk meminta bantuan 
 `),
-	isGroup ? null : getAddToGroupButton(botUsername),
+	getAddToGroupButton(botUsername),
 ]
 const getOnlyGroupsMessage = botUsername => [
 	"⛔ Bot ini hanya tersedia untuk *obrolan grup *. Buat obrolan dengan teman dan tambahkan bot di sana.",
