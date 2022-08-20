@@ -298,7 +298,7 @@ bot.start(async ctx => {
 		...getGreetMessage({
 			botUsername: ctx.botInfo.username,
 		})
-
+	)
 })
 
 bot.command("mulai", async ctx => {
