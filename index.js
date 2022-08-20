@@ -297,7 +297,7 @@ bot.start(async ctx => {
 	await ctx.replyWithMarkdown(
 		...getGreetMessage({
 			botUsername: ctx.botInfo.username,
-			isGroup: ctx.update.message.chat.id < 0,
+			isGroup: null,
 		})
 	)
 })
