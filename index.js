@@ -351,7 +351,7 @@ bot.command("help", ctx => {
 			3.)kamu akan dikasih gambar artis,dan kamu akan disuruh menebak umurnya.
 			4.)waktu (3detik) dengan (5 foto) yang berbeda beda.
 			5.)setiap kamu menjawab nya ,kamu akan mendapatkan point.
-			6.)semakin besar point kamu , kamu akan mendapatkan peringkat di `/top_global` atau di `/top_grub`.
+			6.)semakin besar point kamu , kamu akan mendapatkan peringkat di /top_global atau grub.
 			7.)peringkat akan direset setiap hari Senin (tidak ditentukan jam)
 			8.)setiap peringkat akan dimasukan channel setiap minggunya.
 		`)
