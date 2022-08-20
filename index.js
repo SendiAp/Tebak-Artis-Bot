@@ -30,7 +30,7 @@ const getAddToGroupButton = botUsername => ({
 		],
 	},
 })
-const getGreetMessage = ({botUsername, isGroup}) => [
+const getGreetMessage = ({botUsername, m.isGroup}) => [
 	trueTrim(`
 	__Halo everyone,saya adalah bot tebak umur artis__  •tambahkan saya kegrub dan semua perintah akan berfungsi•
 
