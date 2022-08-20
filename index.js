@@ -18,7 +18,7 @@ const createGameState = chatId => {
 	}
 	return gameStates[chatId]
 }
-const isGroup ? null getAddToGroupButton = botUsername => ({
+const getAddToGroupButton = botUsername => ({
 	reply_markup: {
 		inline_keyboard: [
 			[
@@ -30,7 +30,7 @@ const isGroup ? null getAddToGroupButton = botUsername => ({
 		],
 	},
 })
-const getGreetMessage = ({botUsername, isGroup}) => [
+const isGroup ? null getGreetMessage = ({botUsername, isGroup}) => [
 	trueTrim(`
 	__Halo everyone,saya adalah bot tebak umur artis__  •tambahkan saya kegrub dan semua perintah akan berfungsi•
 
