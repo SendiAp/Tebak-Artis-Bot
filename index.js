@@ -32,10 +32,7 @@ const getAddToGroupButton = botUsername => ({
 })
 const getGreetMessage = ({botUsername, isGroup}) => [
 	trueTrim(`
-	__Halo,untuk menggunakan bot ini__
-	__kamu tinggal berikan perintah__ /mulai ,
-	__jika butuh bantuan silahkan klik__ /help ,
-	**enjoygame.**
+	Halo,untuk menggunakan bot ini kamu tinggal berikan perintah__ /mulai , jika butuh bantuan silahkan klik__ /help >[enjoygame]
 `),
 	isGroup ? null : getAddToGroupButton(botUsername),
 ]
@@ -349,17 +346,27 @@ bot.command("help", ctx => {
 		trueTrim(`
 			Cara Memainkan Bot Tebak Umur Artis:
 
-			1.)Masukan bot digrub anda (dan jadikan admin)
+			1.)masukan bot digrub anda (dan jadikan admin)
 			2.)ketik /mulai untuk memulai gamenya 
 			3.)kamu akan dikasih gambar artis,dan kamu akan disuruh menebak umurnya.
-			4.)Waktu (3detik) dengan (5 foto) yang berbeda beda.
+			4.)waktu (3detik) dengan (5 foto) yang berbeda beda.
 			5.)setiap kamu menjawab nya ,kamu akan mendapatkan point.
-			6.)semakin besar point kamu , kamu akan mendapatkan peringkat di /top_global atau di /top_grub
+			6.)semakin besar point kamu , kamu akan mendapatkan peringkat di `/top_global` atau di `/top_grub`.
 			7.)peringkat akan direset setiap hari Senin (tidak ditentukan jam)
-			8.) Setiap peringkat akan dimasukan channel setiap minggunya.
+			8.)setiap peringkat akan dimasukan channel setiap minggunya.
 		`)
 	)
 })
+
+bot.command("help", ctx => {
+	console.log("help")
+	return ctx.replyWithMarkdown(
+		trueTrim(`
+			Cara Memainkan Bot Tebak Umur Artis:
+		`)
+	)
+})
+
 
 bot.command("top_grub", async ctx => {
 	console.log("top_grub")
@@ -464,7 +471,7 @@ bot.command("top_global", async ctx => {
 				.map(
 					(member, index) =>
 						`${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${
-							fromId === member.id ? "Вы: " : ""
+							fromId === member.id ? "" : ""
 						}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(
 							member.score,
 							"point",
