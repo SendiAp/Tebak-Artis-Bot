@@ -106,7 +106,7 @@ const stopGame = async (ctx, chatId) => {
 		if (top.length > 0) {
 			await ctx.replyWithMarkdown(
 				trueTrim(`
-					🏁 **Dan inilah pemenangnya:**
+					◻️ Hasil Bermain Kamu Tadi:
 
 					${top
 						.sort((a, b) => b.score - a.score)
@@ -123,8 +123,7 @@ const stopGame = async (ctx, chatId) => {
 						)
 						.join("\n")}
 
-					✨Selamat Kepada Pemenang, Yang Telah Memenenangkan Game ini.
-					🔄 /mulai - mau main lagi?
+					◼️ Tingkatkan Point Anda Agar Masuk Dalam Top Besar.
 				`)
 			)
 		} else {
@@ -133,7 +132,7 @@ const stopGame = async (ctx, chatId) => {
 					*⛔ Permainan Dihentikan.*
 
 					💁 Jika kamu butuh bantuan , tekan /help untuk melihatnya..
-					🔄 /mulai - memulai game?
+					🔄 /mulai - memulai game.
 				`)
 			)
 		}
@@ -344,11 +343,7 @@ bot.command("help", ctx => {
 	console.log("help")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			Проще всего задонатить здесь: babki.mishasaidov.com
-			ЮMoney: \`4100117319944149\`
-			QIWI: \`+77002622563\`
-			BTC: \`1MDRDDBURiPEg93epMiryCdGvhEncyAbpy\`
-			Kaspi 🇰🇿: \`4400 4302 1955 7599\`
+			Coming soon 
 		`)
 	)
 })
@@ -376,7 +371,7 @@ bot.command("top_grub", async ctx => {
 			if (top.length > 0) {
 				await ctx.replyWithMarkdown(
 					trueTrim(`
-					*🏅 Pemain terbaik dari obrolan ini adalah:*
+					*🎗️ Pemain terbaik dalam obrolan ini adalah:*
 
 					${top
 						.sort((a, b) => b.score - a.score)
@@ -393,8 +388,7 @@ bot.command("top_grub", async ctx => {
 						)
 						.join("\n")}
 
-					◻️ /mulai permainan untuk mendapatkan peringkat paling pertama digrub ini.
-					🔄 apakah kamu tertarik? yu bermain lagi bersama teman mu!
+					🔸 Point Akan Teriset Setiap Hari Senin , Tingkatkan Terus Point Kamu.
 				`)
 				)
 			} else {
@@ -450,7 +444,7 @@ bot.command("top_global", async ctx => {
 	if (top.length > 0) {
 		await ctx.replyWithMarkdown(
 			trueTrim(`
-			*🌍 Peringkat Pemain Global:*
+			*🎗️ Pemain terbaik di dunia:*
 
 			${topSlice
 				.map(
@@ -477,8 +471,7 @@ bot.command("top_global", async ctx => {
 					  )}\n`
 					: ""
 			}
-			🤖 Dapatkan peringkat teratas dengan cara bermain game ini.
-			🥰 Tertarik dengan game ini?Beri Donasi agar bot akan terus berjalan.
+			🔸 Point Akan Teriset Setiap Hari Senin , Tingkatkan Terus Point Kamu.
 		`)
 		)
 	} else {
