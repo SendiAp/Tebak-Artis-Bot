@@ -18,7 +18,7 @@ const createGameState = chatId => {
 	}
 	return gameStates[chatId]
 }
-const getAddToGroupButton = botUsername => ({
+const null : getAddToGroupButton = botUsername => ({
 	reply_markup: {
 		inline_keyboard: [
 			[
