@@ -30,7 +30,7 @@ const getAddToGroupButton = botUsername => ({
 		],
 	},
 })
-const getGreetMessage = ({botUsername, isGroup, getOnlyPrivateMessage}) => [
+const getGreetMessage = ({botUsername, isGroup}) => [
 	trueTrim(`
 	__Halo everyone,saya adalah bot tebak umur artis__  •tambahkan saya kegrub dan semua perintah akan berfungsi•
 
@@ -297,6 +297,7 @@ bot.start(async ctx => {
 	await ctx.replyWithMarkdown(
 		...getGreetMessage({
 			botUsername: ctx.botInfo.username,
+                        isGroup: ctx.update.message.chat.id < 0,
 		})
 	)
 })
