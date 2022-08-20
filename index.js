@@ -344,7 +344,7 @@ bot.command("help", ctx => {
 	console.log("help")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			Cara Memainkan Bot Tebak Umur Artis:
+			**Cara Memainkan Bot Tebak Umur Artis:**
 
 			1.)masukan bot digrub anda (dan jadikan admin)
 			2.)ketik /mulai untuk memulai gamenya 
@@ -358,11 +358,11 @@ bot.command("help", ctx => {
 	)
 })
 
-bot.command("help", ctx => {
-	console.log("help")
+bot.command("new_image", ctx => {
+	console.log("new_image")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			Cara Memainkan Bot Tebak Umur Artis:
+			🤖 : untuk menambahkan foto artis kalian bisa hubungi @telegameSM dengan kirim foto artis & umurnya.
 		`)
 	)
 })
