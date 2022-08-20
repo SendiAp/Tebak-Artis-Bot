@@ -106,7 +106,7 @@ const stopGame = async (ctx, chatId) => {
 		if (top.length > 0) {
 			await ctx.replyWithMarkdown(
 				trueTrim(`
-					◻️ Hasil Bermain Kamu Tadi:
+					◻️ Hasil Bermain Kamu:
 
 					${top
 						.sort((a, b) => b.score - a.score)
@@ -123,7 +123,7 @@ const stopGame = async (ctx, chatId) => {
 						)
 						.join("\n")}
 
-					◼️ Tingkatkan Point Anda Agar Masuk Dalam Top Besar.
+					◼️ Tingkatkan Point Anda, Agar Masuk Dalam Top Besar.
 				`)
 			)
 		} else {
@@ -131,8 +131,7 @@ const stopGame = async (ctx, chatId) => {
 				trueTrim(`
 					*⛔ Permainan Dihentikan.*
 
-					💁 Jika kamu butuh bantuan , tekan /help untuk melihatnya..
-					🔄 /mulai - memulai game.
+					⚠️ Gabung Channel @smprojectID Penting bagi anda untuk mengetahui informasi terkini dan mengetahui update terbaru.
 				`)
 			)
 		}
@@ -339,11 +338,24 @@ bot.command("stop", async ctx => {
 	}
 })
 
+
+bot.command("reload", ctx => {
+	console.log("reload")
+	return ctx.replyWithMarkdown(
+		trueTrim(`
+			✅ Berhasil Memperbarui Gambar.
+		`)
+	)
+})
+
+
 bot.command("help", ctx => {
 	console.log("help")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			Coming soon 
+			◼️ Kamu Bisa Melihat Cara Bermainnya Disini.
+			
+			https://t.me/smprojectID/30
 		`)
 	)
 })
