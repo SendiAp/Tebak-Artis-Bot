@@ -242,8 +242,8 @@ const startGame = (ctx, chatId) => {
 						trueTrim(`
 						artis ini berumur *${rightAnswer} ${pluralize(
 							rightAnswer,
-							"umur",
-							"point",
+							"tahun",
+							"tahun",
 							"tahun"
 						)}*. hasil, point kamu:
 
