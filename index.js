@@ -358,16 +358,6 @@ bot.command("help", ctx => {
 	)
 })
 
-bot.command("new_image", ctx => {
-	console.log("new_image")
-	return ctx.replyWithMarkdown(
-		trueTrim(`
-			🤖 : untuk menambahkan foto artis kalian bisa hubungi @telegameSM dengan kirim foto artis & umurnya.
-		`)
-	)
-})
-
-
 bot.command("top_grub", async ctx => {
 	console.log("top_grub")
 	let message = ctx.update.message
