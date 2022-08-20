@@ -344,7 +344,7 @@ bot.command("help", ctx => {
 	console.log("help")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			**Cara Memainkan Bot Tebak Umur Artis:**
+			Cara Memainkan Bot Tebak Umur Artis:
 
 			1.)masukan bot digrub anda (dan jadikan admin)
 			2.)ketik /mulai untuk memulai gamenya 
