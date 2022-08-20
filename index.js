@@ -133,10 +133,10 @@ const stopGame = async (ctx, chatId) => {
 		} else {
 			await ctx.replyWithMarkdown(
 				trueTrim(`
-					*⛔ Oke, saya menyelesaikan permainan.*
+					*⛔ Permainan Dihentikan.*
 
 					💁 Jika kamu butuh bantuan , tekan /help untuk melihatnya..
-					🔄 /game - mau bermain lagi?
+					🔄 /mulai - memulai game?
 				`)
 			)
 		}
@@ -172,7 +172,7 @@ const getRoundMessage = (chatId, round, time) => {
 							(member, index) =>
 								`${index + 1}. *${member.firstName}*: ${member.answer}`
 						)
-						.join("\n")}\n`
+						.join("\n")}\n\n`
 				: "Waktu:"
 		}
 		${"⬛".repeat(time)}${"⬜".repeat(config.timerSteps - time)}
