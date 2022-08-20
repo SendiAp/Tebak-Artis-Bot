@@ -173,7 +173,7 @@ const getRoundMessage = (chatId, round, time) => {
 								`${index + 1}. *${member.firstName}*: ${member.answer}`
 						)
 						.join("\n")}\n`
-				: ""
+				: "Waktu:"
 		}
 		${"⬛".repeat(time)}${"⬜".repeat(config.timerSteps - time)}
 	`)
