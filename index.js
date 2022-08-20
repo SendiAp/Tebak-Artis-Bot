@@ -32,7 +32,7 @@ const getAddToGroupButton = botUsername => ({
 })
 const getGreetMessage = ({botUsername, isGroup}) => [
 	trueTrim(`
-	Halo,untuk menggunakan bot ini kamu tinggal berikan perintah__ /mulai , jika butuh bantuan silahkan klik__ /help >[enjoygame]
+	Halo,untuk menggunakan bot ini kamu tinggal berikan perintah /mulai , jika butuh bantuan silahkan klik /help •enjoygame•
 `),
 	isGroup ? null : getAddToGroupButton(botUsername),
 ]
@@ -123,7 +123,7 @@ const stopGame = async (ctx, chatId) => {
 						)
 						.join("\n")}
 
-					◼️ Tingkatkan Point Anda, Agar Masuk Dalam Top Besar.
+					◼️ Tingkatkan Point Kamu, Agar Masuk Dalam Top Besar.
 				`)
 			)
 		} else {
@@ -487,7 +487,7 @@ bot.command("top_global", async ctx => {
 		`)
 		)
 	} else {
-		await ctx.reply("💁 Saat ini,tidak mungkin membuat peringkat.")
+		await ctx.reply("💁 Belum Ada Satupun Pengguna Yang Bermain.")
 	}
 })
 
