@@ -36,7 +36,7 @@ const getGreetMessage = ({botUsername}) => [
 
 	tekan /help untuk meminta bantuan 
 `),
-	isGroup ? null : getAddToGroupButton(botUsername),
+	getAddToGroupButton(botUsername),
 ]
 const getOnlyGroupsMessage = botUsername => [
 	"⛔ Bot ini hanya tersedia untuk *obrolan grup *. Buat obrolan dengan teman dan tambahkan bot di sana.",
