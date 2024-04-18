@@ -2,5 +2,5 @@ module.exports = {
 	token: "7054978187:AAEwXYfMKr_TpFIciCfhopx3QNsEGx3KR44",
 	rounds: 5, //rounds amount
 	waitDelay: 12000, //1 round duration
-	timerSteps: 60, //timer indicators
+	timerSteps: 120, //timer indicators
 }
